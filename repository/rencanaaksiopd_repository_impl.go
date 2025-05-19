@@ -208,10 +208,6 @@ func (repository *RencanaAksiOpdRepositoryImpl) FindBySasaranOpdAndTahun(ctx con
 				Id:             id,
 				SasaranOpdId:   sasaranId,
 				TahunRenaksi:   tahun,
-				Tw1:            int(tw1.Int32),
-				Tw2:            int(tw2.Int32),
-				Tw3:            int(tw3.Int32),
-				Tw4:            int(tw4.Int32),
 				Keterangan:     ket,
 				RencanaKinerja: []domain.RencanaKinerjaOpd{},
 			}
@@ -222,12 +218,17 @@ func (repository *RencanaAksiOpdRepositoryImpl) FindBySasaranOpdAndTahun(ctx con
 		// Inisialisasi RencanaKinerja baru
 		if currentRencanaKinerja == nil || currentRencanaKinerja.RekinId != rekinId {
 			currentRencanaKinerja = &domain.RencanaKinerjaOpd{
+				Id:                 id,
 				RekinId:            rekinId,
 				NamaRencanaKinerja: namaRencanaKinerja,
 				NipPegawai:         nip,
 				NamaPegawai:        namaPegawai,
 				KodeOpd:            kodeOpd,
 				TotalAnggaran:      totalAnggaran,
+				Tw1:                int(tw1.Int32),
+				Tw2:                int(tw2.Int32),
+				Tw3:                int(tw3.Int32),
+				Tw4:                int(tw4.Int32),
 				SubKegiatan:        []domain.SubKegiatanOpd{},
 			}
 			lastIdx := len(result) - 1

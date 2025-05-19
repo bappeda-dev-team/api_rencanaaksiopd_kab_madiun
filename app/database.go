@@ -31,11 +31,11 @@ func GetConnection() *sql.DB {
 
 	connStr := fmt.Sprintf("%s@tcp(%s:%s)/%s?parseTime=true", dbUser, dbHost, dbPort, dbName)
 
-	dbUrl := os.Getenv("DB_URL")
+	// dbUrl := os.Getenv("DB_URL")
 
-	if dbUrl != "" {
-		connStr = dbUrl
-	}
+	// if dbUrl != "" {
+	// 	connStr = dbUrl
+	// }
 
 	db, err := sql.Open("mysql", connStr)
 	if err != nil {

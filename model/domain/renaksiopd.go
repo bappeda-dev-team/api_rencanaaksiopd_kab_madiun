@@ -17,11 +17,16 @@ type RencanaAksiOpd struct {
 }
 
 type RencanaKinerjaOpd struct {
+	Id                 int
 	RekinId            string
 	NamaRencanaKinerja string
 	NipPegawai         string
 	NamaPegawai        string
 	KodeOpd            string
+	Tw1                int
+	Tw2                int
+	Tw3                int
+	Tw4                int
 	TotalAnggaran      int64
 	SubKegiatan        []SubKegiatanOpd
 }
