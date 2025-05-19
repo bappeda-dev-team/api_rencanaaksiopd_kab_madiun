@@ -11,7 +11,6 @@ func ToRencanaAksiOpdResponse(rencanaAksi domain.RencanaAksiOpd) web.RencanaAksi
 		SasaranOpdId:   rencanaAksi.SasaranOpdId,
 		NamaSasaranOpd: rencanaAksi.NamaSasaranOpd,
 		TahunRenaksi:   rencanaAksi.TahunRenaksi,
-		Keterangan:     rencanaAksi.Keterangan,
 		RencanaKinerja: ToRencanaKinerjaResponses(rencanaAksi.RencanaKinerja),
 	}
 }
@@ -37,6 +36,7 @@ func ToRencanaKinerjaResponse(rk domain.RencanaKinerjaOpd) web.RencanaKinerjaRes
 		Tw2:                rk.Tw2,
 		Tw3:                rk.Tw3,
 		Tw4:                rk.Tw4,
+		Keterangan:         rk.Keterangan,
 		SubKegiatan:        ToSubKegiatanResponses(rk.SubKegiatan),
 	}
 }

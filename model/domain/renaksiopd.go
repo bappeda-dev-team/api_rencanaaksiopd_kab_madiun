@@ -27,6 +27,7 @@ type RencanaKinerjaOpd struct {
 	Tw2                int
 	Tw3                int
 	Tw4                int
+	Keterangan         *string
 	TotalAnggaran      int64
 	SubKegiatan        []SubKegiatanOpd
 }

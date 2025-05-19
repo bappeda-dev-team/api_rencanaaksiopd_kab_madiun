@@ -4,7 +4,6 @@ type RencanaAksiOpdResponse struct {
 	SasaranOpdId   int                      `json:"sasaran_opd_id"`
 	NamaSasaranOpd string                   `json:"nama_sasaran_opd"`
 	TahunRenaksi   string                   `json:"tahun_renaksi"`
-	Keterangan     *string                  `json:"keterangan"`
 	RencanaKinerja []RencanaKinerjaResponse `json:"rencana_kinerja"`
 }
 
@@ -20,6 +19,7 @@ type RencanaKinerjaResponse struct {
 	Tw2                int                   `json:"tw2"`
 	Tw3                int                   `json:"tw3"`
 	Tw4                int                   `json:"tw4"`
+	Keterangan         *string               `json:"keterangan"`
 	SubKegiatan        []SubKegiatanResponse `json:"subkegiatan"`
 }
 

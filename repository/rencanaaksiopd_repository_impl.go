@@ -199,16 +199,10 @@ func (repository *RencanaAksiOpdRepositoryImpl) FindBySasaranOpdAndTahun(ctx con
 
 		// Inisialisasi RencanaAksiOpd baru
 		if currentRencanaAksi == nil || currentRencanaAksi.SasaranOpdId != sasaranId {
-			var ket *string
-			if keterangan.Valid {
-				ket = &keterangan.String
-			}
-
 			currentRencanaAksi = &domain.RencanaAksiOpd{
 				Id:             id,
 				SasaranOpdId:   sasaranId,
 				TahunRenaksi:   tahun,
-				Keterangan:     ket,
 				RencanaKinerja: []domain.RencanaKinerjaOpd{},
 			}
 			result = append(result, *currentRencanaAksi)
@@ -217,6 +211,10 @@ func (repository *RencanaAksiOpdRepositoryImpl) FindBySasaranOpdAndTahun(ctx con
 
 		// Inisialisasi RencanaKinerja baru
 		if currentRencanaKinerja == nil || currentRencanaKinerja.RekinId != rekinId {
+			var ket *string
+			if keterangan.Valid {
+				ket = &keterangan.String
+			}
 			currentRencanaKinerja = &domain.RencanaKinerjaOpd{
 				Id:                 id,
 				RekinId:            rekinId,
@@ -229,6 +227,7 @@ func (repository *RencanaAksiOpdRepositoryImpl) FindBySasaranOpdAndTahun(ctx con
 				Tw2:                int(tw2.Int32),
 				Tw3:                int(tw3.Int32),
 				Tw4:                int(tw4.Int32),
+				Keterangan:         ket,
 				SubKegiatan:        []domain.SubKegiatanOpd{},
 			}
 			lastIdx := len(result) - 1
