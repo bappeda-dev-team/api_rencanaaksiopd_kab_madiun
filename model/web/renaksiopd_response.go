@@ -1,25 +1,25 @@
 package web
 
 type RencanaAksiOpdResponse struct {
-	Id             int                      `json:"id_renaksiopd"`
 	SasaranOpdId   int                      `json:"sasaran_opd_id"`
 	NamaSasaranOpd string                   `json:"nama_sasaran_opd"`
 	TahunRenaksi   string                   `json:"tahun_renaksi"`
-	Tw1            int                      `json:"tw1"`
-	Tw2            int                      `json:"tw2"`
-	Tw3            int                      `json:"tw3"`
-	Tw4            int                      `json:"tw4"`
-	Keterangan     *string                  `json:"keterangan"`
 	RencanaKinerja []RencanaKinerjaResponse `json:"rencana_kinerja"`
 }
 
 type RencanaKinerjaResponse struct {
+	Id                 int                   `json:"id_renaksiopd"`
 	RekinId            string                `json:"rekin_id"`
 	NamaRencanaKinerja string                `json:"nama_rencana_kinerja"`
 	NipPegawai         string                `json:"nip_pegawai"`
 	NamaPegawai        string                `json:"nama_pegawai"`
 	KodeOpd            string                `json:"kode_opd"`
 	TotalAnggaran      int64                 `json:"total_anggaran"`
+	Tw1                int                   `json:"tw1"`
+	Tw2                int                   `json:"tw2"`
+	Tw3                int                   `json:"tw3"`
+	Tw4                int                   `json:"tw4"`
+	Keterangan         *string               `json:"keterangan"`
 	SubKegiatan        []SubKegiatanResponse `json:"subkegiatan"`
 }
 

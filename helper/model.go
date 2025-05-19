@@ -8,15 +8,9 @@ import (
 
 func ToRencanaAksiOpdResponse(rencanaAksi domain.RencanaAksiOpd) web.RencanaAksiOpdResponse {
 	return web.RencanaAksiOpdResponse{
-		Id:             rencanaAksi.Id,
 		SasaranOpdId:   rencanaAksi.SasaranOpdId,
 		NamaSasaranOpd: rencanaAksi.NamaSasaranOpd,
 		TahunRenaksi:   rencanaAksi.TahunRenaksi,
-		Tw1:            rencanaAksi.Tw1,
-		Tw2:            rencanaAksi.Tw2,
-		Tw3:            rencanaAksi.Tw3,
-		Tw4:            rencanaAksi.Tw4,
-		Keterangan:     rencanaAksi.Keterangan,
 		RencanaKinerja: ToRencanaKinerjaResponses(rencanaAksi.RencanaKinerja),
 	}
 }
@@ -31,12 +25,18 @@ func ToRencanaKinerjaResponses(rencanaKinerja []domain.RencanaKinerjaOpd) []web.
 
 func ToRencanaKinerjaResponse(rk domain.RencanaKinerjaOpd) web.RencanaKinerjaResponse {
 	return web.RencanaKinerjaResponse{
+		Id:                 rk.Id,
 		RekinId:            rk.RekinId,
 		NamaRencanaKinerja: rk.NamaRencanaKinerja,
 		NipPegawai:         rk.NipPegawai,
 		NamaPegawai:        rk.NamaPegawai,
 		KodeOpd:            rk.KodeOpd,
 		TotalAnggaran:      rk.TotalAnggaran,
+		Tw1:                rk.Tw1,
+		Tw2:                rk.Tw2,
+		Tw3:                rk.Tw3,
+		Tw4:                rk.Tw4,
+		Keterangan:         rk.Keterangan,
 		SubKegiatan:        ToSubKegiatanResponses(rk.SubKegiatan),
 	}
 }
