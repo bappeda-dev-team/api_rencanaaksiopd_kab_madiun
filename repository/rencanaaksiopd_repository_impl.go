@@ -570,9 +570,9 @@ func (repository *RencanaAksiOpdRepositoryImpl) FindAllSasaranByTahun(ctx contex
         AND so.tahun_akhir = vp.tahun_akhir 
         AND so.jenis_periode = vp.jenis_periode
     )
-    LEFT JOIN tb_indikator i ON so.id = i.sasaran_opd_id
+    LEFT JOIN tb_indikator_matrix i ON so.id = i.sasaran_opd_id
     LEFT JOIN target_data t ON i.id = t.indikator_id
-    WHERE pk.kode_opd = ?
+    WHERE pk.kode_opd = ? AND i.jenis = 'penetapan' AND i.iku_active = 1
     AND ? BETWEEN so.tahun_awal AND so.tahun_akhir
     ORDER BY so.nama_sasaran_opd ASC, i.indikator ASC`
 
